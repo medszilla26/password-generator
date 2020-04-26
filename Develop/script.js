@@ -20,7 +20,7 @@ generateBtn.addEventListener("click", writePassword);
 var lengthConfirmed = prompt(
   "Please enter the amount of characters you would like in your password:"
 );
-var uppercaseConfirmed = prompt(" Would you like to include uppercase?");
-var lowercaseConfirmed = prompt(" Would you like to include lowercase?");
-var symbolsConfirmed = prompt(" Would you like to include symbols?");
-var numbersConfirmed = prompt(" Would you like to include numbers?");
+var uppercaseConfirmed = confirm(" Would you like to include uppercase?");
+var lowercaseConfirmed = confirm(" Would you like to include lowercase?");
+var symbolsConfirmed = confirm(" Would you like to include symbols?");
+var numbersConfirmed = confirm(" Would you like to include numbers?");
