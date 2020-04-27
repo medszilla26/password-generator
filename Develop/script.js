@@ -50,4 +50,7 @@ function generatePassword() {
   else {
     lengthConfirmed >= 10 || lengthConfirmed <= 128;
     var uppercaseConfirmed = confirm("Select OK if you would like to include UPPERCASE letters");
+    var lowercaseConfirmed = confirm("Select OK if you would like to include LOWERCASE letters");
+    var symbolsConfirmed = confirm("Select OK if you would like to include SYMBOLS");
+    var numbersConfirmed = confirm("Select OK if you would like to include NUMBERS");
 }
