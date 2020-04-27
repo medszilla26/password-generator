@@ -95,5 +95,9 @@ function generatePassword() {
   ) {
     alert("Please select one or more character types.");
   } else {
+    var passwordChoice = [];
+    if (uppercaseConfirmed)
+      passwordChoice = passwordChoice.concat(includeUppercase);
+    console.log(uppercaseConfirmed);
   }
 }
