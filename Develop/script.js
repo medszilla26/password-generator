@@ -19,8 +19,12 @@ var includeSymbols = [
   "=",
 ];
 var includeNumbers = [0123456789];
-var lengthConfirmed = " ";
-console.log(includeSymbols);
+var lengthConfirmed = "";
+var uppercaseConfirmed;
+var lowercaseConfirmed;
+var symbolsConfirmed;
+var numbersConfirmed;
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -41,24 +45,9 @@ function generatePassword() {
       "Password must be between 10 to 128 characters long, please try again!"
     );
     return;
-  } else {
-    lengthConfirmed > 10 || lengthConfirmed < 128;
-
-    var uppercaseConfirmed = confirm("Would you like to include uppercase?");
-    var lowercaseConfirmed = confirm("Would you like to include lowercase?");
-    var symbolsConfirmed = confirm("Would you like to include symbols?");
-    var numbersConfirmed = confirm("Would you like to include numbers?");
-  }
-
-  // if
-  //   var passwordChoice = [];
-  //   if (uppercaseConfirmed)
-  //   passwordChoice = passwordChoice.concat(includeUppercase);
-  //   if (lowercaseConfirmed)
-  //   passwordChoice = passwordChoice.concat(includeLowercase);
-  //   if (symbolsConfirmed)
-  //   passwordChoice = passwordChoice.concat(includeSymbols);
-  //   if (numbersConfirmed)
-  //   passwordChoice = passwordChoice.concat(includeNumbers);
-  //   var password = "";
+  } 
+  
+  else {
+    lengthConfirmed >= 10 || lengthConfirmed <= 128;
+    var uppercaseConfirmed = confirm("Select OK if you would like to include UPPERCASE letters");
 }
