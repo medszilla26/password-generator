@@ -1,6 +1,33 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var includeUppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+var includeUppercase = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 var includeLowercase = [
   "a",
   "b",
@@ -87,17 +114,30 @@ function generatePassword() {
       "Select OK if you would like to include NUMBERS"
     );
   }
+
   if (
     uppercaseConfirmed === false &&
     lowercaseConfirmed === false &&
     symbolsConfirmed === false &&
     numbersConfirmed === false
   ) {
-    alert("Please select one or more character types.");
+    alert("Please select one or more character types");
   } else {
     var passwordChoice = [];
     if (uppercaseConfirmed)
       passwordChoice = passwordChoice.concat(includeUppercase);
-    console.log(uppercaseConfirmed);
+    if (lowercaseConfirmed)
+      passwordChoice = passwordChoice.concat(includeLowercase);
+    if (symbolsConfirmed)
+      passwordChoice = passwordChoice.concat(includeSymbols);
+    if (numbersConfirmed)
+      passwordChoice = passwordChoice.concat(includeNumbers);
+    var password = "";
+    for (var i = 1; i <= lengthConfirmed; i++) {
+      var random =
+        passwordChoice[Math.floor(Math.random() * passwordChoice.length)];
+      password = password + random;
+    }
+    return password;
   }
 }
