@@ -1,7 +1,34 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var includeUppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var includeLowercase = ["abcdefghijklmnopqrstuvwxyz"];
+var includeLowercase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 var includeSymbols = [
   "!",
   "@",
@@ -18,7 +45,7 @@ var includeSymbols = [
   "-",
   "=",
 ];
-var includeNumbers = [0123456789];
+var includeNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lengthConfirmed = "";
 var uppercaseConfirmed;
 var lowercaseConfirmed;
@@ -45,12 +72,28 @@ function generatePassword() {
       "Password must be between 10 to 128 characters long, please try again!"
     );
     return;
-  } 
-  
-  else {
+  } else {
     lengthConfirmed >= 10 || lengthConfirmed <= 128;
-    var uppercaseConfirmed = confirm("Select OK if you would like to include UPPERCASE letters");
-    var lowercaseConfirmed = confirm("Select OK if you would like to include LOWERCASE letters");
-    var symbolsConfirmed = confirm("Select OK if you would like to include SYMBOLS");
-    var numbersConfirmed = confirm("Select OK if you would like to include NUMBERS");
+    var uppercaseConfirmed = confirm(
+      "Select OK if you would like to include UPPERCASE letters"
+    );
+    var lowercaseConfirmed = confirm(
+      "Select OK if you would like to include LOWERCASE letters"
+    );
+    var symbolsConfirmed = confirm(
+      "Select OK if you would like to include SYMBOLS"
+    );
+    var numbersConfirmed = confirm(
+      "Select OK if you would like to include NUMBERS"
+    );
+  }
+  if (
+    uppercaseConfirmed === false &&
+    lowercaseConfirmed === false &&
+    symbolsConfirmed === false &&
+    numbersConfirmed === false
+  ) {
+    alert("Please select one or more character types.");
+  } else {
+  }
 }
