@@ -92,15 +92,15 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var lengthConfirmed = prompt(
-    "Please enter the amount of characters you would like in your password:(Password must be between 10-128 characters in length)"
+    "Please enter the amount of characters you would like in your password:(Password must be between 8-128 characters in length)"
   );
-  if (lengthConfirmed <= 9 || lengthConfirmed >= 129) {
+  if (lengthConfirmed <= 7 || lengthConfirmed >= 129) {
     alert(
-      "Password must be between 10 to 128 characters long, please try again!"
+      "Password must be between 8 to 128 characters long, please try again!"
     );
     return;
   } else {
-    lengthConfirmed >= 10 || lengthConfirmed <= 128;
+    lengthConfirmed >= 8 || lengthConfirmed <= 128;
     var uppercaseConfirmed = confirm(
       "Select OK if you would like to include UPPERCASE letters"
     );
