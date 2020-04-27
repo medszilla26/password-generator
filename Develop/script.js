@@ -2,10 +2,25 @@
 var generateBtn = document.querySelector("#generate");
 var includeUppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 var includeLowercase = ["abcdefghijklmnopqrstuvwxyz"];
-var includeSymbols = ["!@#$%^&*()_+-="];
+var includeSymbols = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "_",
+  "+",
+  "-",
+  "=",
+];
 var includeNumbers = [0123456789];
 var lengthConfirmed = " ";
-
+console.log(includeSymbols);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -23,12 +38,27 @@ function generatePassword() {
   );
   if (lengthConfirmed <= 9 || lengthConfirmed >= 129) {
     alert(
-      "Password must be between 10 to 128 character long, please try again!"
+      "Password must be between 10 to 128 characters long, please try again!"
     );
+    return;
+  } else {
+    lengthConfirmed > 10 || lengthConfirmed < 128;
+
+    var uppercaseConfirmed = confirm("Would you like to include uppercase?");
+    var lowercaseConfirmed = confirm("Would you like to include lowercase?");
+    var symbolsConfirmed = confirm("Would you like to include symbols?");
+    var numbersConfirmed = confirm("Would you like to include numbers?");
   }
 
-  var uppercaseConfirmed = confirm(" Would you like to include uppercase?");
-  var lowercaseConfirmed = confirm(" Would you like to include lowercase?");
-  var symbolsConfirmed = confirm(" Would you like to include symbols?");
-  var numbersConfirmed = confirm(" Would you like to include numbers?");
+  // if
+  //   var passwordChoice = [];
+  //   if (uppercaseConfirmed)
+  //   passwordChoice = passwordChoice.concat(includeUppercase);
+  //   if (lowercaseConfirmed)
+  //   passwordChoice = passwordChoice.concat(includeLowercase);
+  //   if (symbolsConfirmed)
+  //   passwordChoice = passwordChoice.concat(includeSymbols);
+  //   if (numbersConfirmed)
+  //   passwordChoice = passwordChoice.concat(includeNumbers);
+  //   var password = "";
 }
