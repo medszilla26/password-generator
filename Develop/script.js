@@ -98,7 +98,7 @@ function generatePassword() {
     alert(
       "Password must be between 8 to 128 characters long, please try again!"
     );
-    return;
+    return (password = "Please refresh and try again :)");
   } else {
     lengthConfirmed >= 8 || lengthConfirmed <= 128;
     var uppercaseConfirmed = confirm(
@@ -122,6 +122,7 @@ function generatePassword() {
     numbersConfirmed === false
   ) {
     alert("Please select one or more character types");
+    return (password = "Please refresh and try again :)");
   } else {
     var passwordChoice = [];
     if (uppercaseConfirmed)
